@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phone Intelligence Lookup</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<canvas id="matrix"></canvas>
+
+<!-- STARTUP SOUND -->
+<audio id="startupSound">
+  <source src="https://assets.mixkit.co/active_storage/sfx/391/391-preview.mp3">
+</audio>
+
+<!-- SCAN SOUND -->
+<audio id="scanSound">
+  <source src="https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3">
+</audio>
+
+<!-- DISCLAIMER -->
+<div id="disclaimerScreen">
+  <div class="login-box">
+    <h2 class="glowText">⚠ Disclaimer</h2>
+    <p>This tool is only for <strong>educational purposes</strong>.<br>
+    Made by: <strong>Samarth</strong></p>
+    <button onclick="acceptDisclaimer()">I Understand</button>
+  </div>
+</div>
+
+<!-- LOGIN SCREEN -->
+<div id="loginScreen">
+  <div class="login-box">
+    <h2 class="glowText">📞 Secure Phone Access</h2>
+    <input type="password" id="passwordInput" placeholder="ENTER ACCESS PASSWORD"/>
+    <button onclick="checkPassword()">🔓 ACCESS</button>
+    <p id="loginError"></p>
+  </div>
+</div>
+
+<!-- BOOT TERMINAL -->
+<div id="bootScreen">
+  <div class="terminal-box">
+    <pre id="bootLog"></pre>
+  </div>
+</div>
+
+<!-- MAIN DASHBOARD -->
+<div id="app">
+  <div class="dashboard">
+    <header>
+      <h1 class="glowText">PHONE LOOKUP SYSTEM</h1>
+      <p class="brand glowText">[ SAMARTH HACKER ]</p>
+    </header>
+
+    <section class="panel">
+      <h3 class="glowText">📞 Phone Number Lookup</h3>
+      <div class="search">
+        <input id="phoneInput" placeholder="ENTER PHONE NUMBER">
+        <button onclick="fetchPhone()">SCAN</button>
+      </div>
+      <div id="radarScan">
+        <div class="radar"></div>
+        <p>Scanning Phone Database...</p>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h3 class="glowText">Phone Intelligence</h3>
+      <div id="result"></div>
+      <h3>History</h3>
+      <ul id="history"></ul>
+    </section>
+
+    <footer>
+      <p>Designed Website : Samarth</p>
+      <p>Website Owner : Samarth</p>
+    </footer>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+      </html>
