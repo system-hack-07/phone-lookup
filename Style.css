@@ -1,0 +1,58 @@
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#020505;font-family:'Fira Code',monospace;overflow:hidden;color:#00ff9c;}
+
+/* SHINING TEXT */
+.glowText{
+  font-family:'Orbitron',sans-serif;
+  background:linear-gradient(90deg,#00ffff,#7c4dff,#00e5ff,#b388ff,#00ffff);
+  background-size:400%;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation:glowMove 6s linear infinite;
+  text-shadow:0 0 10px rgba(0,255,255,0.6),0 0 20px rgba(124,77,255,0.6),0 0 30px rgba(0,255,255,0.6);
+}
+@keyframes glowMove{0%{background-position:0%;}100%{background-position:400%;}}
+
+/* MATRIX */
+#matrix{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;}
+
+/* DISCLAIMER */
+#disclaimerScreen{position:fixed;width:100%;height:100%;display:flex;justify-content:center;align-items:center;background:black;z-index:999;}
+
+/* LOGIN */
+#loginScreen{display:none;position:fixed;width:100%;height:100%;justify-content:center;align-items:center;background:black;z-index:998;}
+.login-box{padding:30px;width:300px;background:rgba(0,0,0,0.85);border:1px solid #00ffff;box-shadow:0 0 30px #00ffff;text-align:center;}
+.login-box input{width:100%;padding:10px;margin-top:10px;background:black;border:1px solid #7c4dff;color:#b388ff;}
+.login-box button{margin-top:10px;padding:10px;width:100%;background:#00e5ff;border:none;font-weight:bold;}
+#loginError{margin-top:10px;color:red;}
+
+/* BOOT */
+#bootScreen{display:none;position:fixed;width:100%;height:100%;background:black;justify-content:center;align-items:center;}
+.terminal-box{width:420px;padding:25px;background:#000;border:1px solid #00ffff;box-shadow:0 0 20px #00ffff;}
+#bootLog{white-space:pre-wrap;font-size:14px;color:#00ff9c;}
+
+/* DASHBOARD */
+#app{display:none;justify-content:center;align-items:center;height:100vh;}
+.dashboard{width:460px;padding:25px;background:rgba(0,0,0,0.55);backdrop-filter:blur(15px);border:1px solid rgba(0,255,255,0.5);box-shadow:0 0 30px rgba(0,255,255,0.6);}
+
+/* PANEL */
+.panel{margin-top:15px;padding:15px;background:rgba(0,0,0,0.4);border:1px solid rgba(0,255,255,0.4);}
+.panel h3{color:#b388ff;}
+
+/* SEARCH */
+.search{display:flex;gap:10px;}
+.search input{flex:1;padding:10px;background:black;border:1px solid #7c4dff;color:#b388ff;}
+.search button{padding:10px 20px;background:#00e5ff;border:none;font-weight:bold;}
+
+/* RADAR */
+#radarScan{display:none;text-align:center;margin-top:10px;color:#ffd54f;}
+.radar{width:120px;height:120px;border:2px solid #00ffff;border-radius:50%;margin:auto;position:relative;overflow:hidden;}
+.radar::before{content:"";position:absolute;width:100%;height:100%;background:linear-gradient(90deg,transparent,#00ffff);animation:radar 2s linear infinite;}
+@keyframes radar{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
+
+/* RESULT */
+#result{white-space:pre-line;margin-top:10px;color:#4dd0e1;}
+
+/* HISTORY */
+#history{list-style:none;padding:0;margin-top:10px;}
+#history li{background-color:#0f3460;margin:5px auto;padding:5px 10px;width:300px;border-radius:5px;}
